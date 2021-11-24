@@ -1,0 +1,21 @@
+version: '3'
+
+services:
+
+  prometheus:
+    build: ./prometheus/
+    restart: on-failure
+    ports:
+      - "9090:9090"
+
+  grafana:
+    build: ./grafana/
+    restart: on-failure
+    ports:
+      - "3000:3000"
+
+  blackbox1:
+    build: ./blackbox1/
+    restart: on-failure
+    ports:
+      - "9115:9115"
